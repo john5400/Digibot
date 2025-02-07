@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Degradado de fondo */
 }
 
 header {
@@ -15,7 +16,7 @@ header {
 }
 
 header .logo img {
-  height: 50px;
+  height: 60px;
 }
 
 nav ul {
@@ -30,20 +31,18 @@ nav ul li a {
 }
 
 .hero {
-  background:
-    url("hole.jpg"),
-    no-repeat center center/cover; /* Cambiado a 'no-repeat' */
+  background: linear-gradient(rgba(255, 126, 95, 0.6), rgba(254, 180, 123, 0.6)), 
+              url("hole.jpg") no-repeat center center/cover;
   color: #921212;
   text-align: center;
   padding: 100px 20px;
   position: relative;
-  height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
-
-  display: flex; /* Usamos flexbox para centrar el contenido */
-  flex-direction: column; /* Organiza el contenido en columna */
-  justify-content: center; /* Centra el contenido verticalmente */
-  align-items: center; /* Centra el contenido horizontalmente */
-  box-sizing: border-box; /* Asegura que el padding no afecte el alto total */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .hero h1 {
@@ -58,9 +57,7 @@ nav ul li a {
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.2rem;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .hero .btn:hover {
@@ -85,9 +82,7 @@ nav ul li a {
   border-radius: 10px;
   width: 30%;
   text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .servicio:hover {
@@ -104,8 +99,7 @@ nav ul li a {
   color: #666;
 }
 
-.nosotros,
-.contacto {
+.nosotros, .contacto {
   padding: 50px 20px;
   text-align: center;
 }
@@ -118,8 +112,7 @@ nav ul li a {
   margin: 0 auto;
 }
 
-.contacto form input,
-.contacto form textarea {
+.contacto form input, .contacto form textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -132,9 +125,7 @@ nav ul li a {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition:
-    background-color 0.3s ease,
-    transform 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contacto form button:hover {
@@ -147,7 +138,4 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
-}
-body {
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
