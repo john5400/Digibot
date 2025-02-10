@@ -1,141 +1,186 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Degradado de fondo */
-  }
-  
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: gray;
-    color: #3d1414;
-  }
-  
-  header .logo img {
-    height: 60px;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .hero {
-    background: linear-gradient(rgba(255, 126, 95, 0.6), rgba(254, 180, 123, 0.6)), 
-                url("hole.jpg") no-repeat center center/cover;
-    color: #921212;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  .hero .btn {
-    background-color: #ff6600;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .hero .btn:hover {
-    background-color: #e65c00;
-    transform: scale(1.1);
-  }
-  
-  .servicios {
-    padding: 50px 20px;
-    text-align: center;
-  }
-  
-  .servicios-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-  }
-  
-  .servicio {
-    background-color: yellow;
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .servicio:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .servicio h3 {
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .servicio p {
-    color: #666;
-  }
-  
-  .nosotros, .contacto {
-    padding: 50px 20px;
-    text-align: center;
-  }
-  
-  .contacto form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  
-  .contacto form input, .contacto form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .contacto form button {
-    background-color: #ff6600;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .contacto form button:hover {
-    background-color: #e65c00;
-    transform: scale(1.05);
-  }
-  
-  footer {
-    background-color: orange;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: gray;
+  color: white;
+  height: 20px;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(255, 126, 95, 0.6), rgba(254, 180, 123, 0.6)), 
+              url("hole.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero .btn {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.1);
+}
+
+/* Servicios */
+.servicios {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.servicios-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.servicio {
+  background-color: yellow;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicio:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón estilizado */
+.button {
+position: relative;
+width: 120px;
+height: 40px;
+background-color: #000;
+display: flex;
+align-items: center;
+color: white;
+justify-content: center;
+border: none;
+padding: 12px;
+gap: 12px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 1rem;
+}
+
+.button::before {
+content: '';
+position: absolute;
+inset: 0;
+left: -4px;
+top: -1px;
+margin: auto;
+width: 128px;
+height: 48px;
+border-radius: 10px;
+background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+z-index: -10;
+pointer-events: none;
+transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+content: "";
+z-index: -1;
+position: absolute;
+inset: 0;
+background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+transform: translate3d(0, 0, 0) scale(0.95);
+filter: blur(20px);
+}
+
+.button:hover::after {
+filter: blur(30px);
+}
+
+.button:hover::before {
+transform: rotate(-180deg);
+}
+
+.button:active::before {
+scale: 0.7;
+}
+
+/* Contacto */
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.nosotros, .contacto {
+  padding: 50px 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.contacto form input, .contacto form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: px;
+}
+
+footer {
+  background-color: orange;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+/* Centrar la sección "Sobre nosotros" */
+.servicio {
+    text-align: center; /* Centra el texto */
+    margin: 0 auto; /* Centra el contenedor */
+    max-width: 600px; /* Opcional: Limita el ancho para mejor lectura */
+}
