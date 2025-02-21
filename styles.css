@@ -1,238 +1,302 @@
-/* Estilos generales */
+/* Variables CSS */
+:root {
+  --color-primary: #4CAF50;
+  --color-secondary: #45a049;
+  --color-text: #333;
+  --color-background: #f4f4f4;
+  --color-white: gray;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+  --font-primary: Arial, sans-serif;
+  --border-radius: 10px;
+  --transition: all 0.3s ease;
+}
+
+/* Animación de crecimiento */
+@keyframes growAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Aplicar la animación al hacer clic */
+.logo img.grow {
+    animation: growAnimation 0.5s ease;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 /* Header */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 header .logo img {
-    height: 50px;
+  height: 85px;
+  width: auto;
+  transition: var(--transition); /* Transición suave */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el logo */
 }
 
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+nav ul li a:hover {
+  color: var(--color-secondary);
 }
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #f4f4f4;
+  padding: 100px 20px; /* Espaciado interno */
+  text-align: center; /* Centrar el contenido */
+  background-image: url('holemmm.png'); /* Ruta de la imagen */
+  background-size: cover; /* Cubre toda la sección */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  color: white; /* Cambia el color del texto para que sea legible */
+  position: relative; /* Necesario para el pseudo-elemento */
+}
+
+/* Fondo semitransparente para mejorar la legibilidad */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(163, 153, 153, 0.5); /* Fondo semitransparente */
+  z-index: 0; /* Coloca el fondo detrás del contenido */
+}
+
+.hero h1,
+.hero p,
+.hero .button {
+  position: relative; /* Asegura que el texto esté sobre el fondo */
+  z-index: 1; /* Coloca el texto por encima del fondo semitransparente */
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 .hero .button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.hero .button:hover {
+  background-color: var(--color-secondary);
 }
 
 /* Servicios Section */
 .servicios {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: white;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: var(--color-white);
 }
 
 .servicios h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
+  font-size: 2rem;
+  margin-bottom: 40px;
 }
 
 .servicios-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .servicio {
-    flex: 1 1 30%;
-    margin: 10px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 30%;
+  padding: 20px;
+  background-color: var(--color-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px var(--color-shadow);
+  transition: var(--transition);
+}
+
+.servicio:hover {
+  transform: translateY(-10px);
 }
 
 .servicio h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .servicio p {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 /* Nosotros Section */
 .nosotros {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: var(--color-background);
 }
 
 .nosotros h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .nosotros p {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /* Contacto Section */
 .contacto {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: white;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: var(--color-white);
 }
 
 .contacto h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .contacto form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contacto label {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    text-align: left;
+  font-size: 1rem;
+  text-align: left;
 }
 
 .contacto input, .contacto textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
 }
 
 .contacto button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .contacto button:hover {
-    background-color: #45a049;
+  background-color: var(--color-secondary);
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color-text);
+  color: var(--color-white);
 }
 
 /* Media Queries para Responsive Design */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
+  header {
+      flex-direction: column;
+      text-align: center;
+  }
 
-    nav ul {
-        flex-direction: column;
-    }
+  nav ul {
+      flex-direction: column;
+      gap: 10px;
+  }
 
-    nav ul li {
-        margin: 10px 0;
-    }
+  .hero h1 {
+      font-size: 2rem;
+  }
 
-    .hero h1 {
-        font-size: 2rem;
-    }
+  .hero p {
+      font-size: 1rem;
+  }
 
-    .hero p {
-        font-size: 1rem;
-    }
+  .servicios-container {
+      flex-direction: column;
+  }
 
-    .servicios-container {
-        flex-direction: column;
-    }
-
-    .servicio {
-        flex: 1 1 100%;
-        margin: 10px 0;
-    }
-
-    .contacto form {
-        width: 90%;
-    }
+  .servicio {
+      flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5rem;
-    }
+  .hero h1 {
+      font-size: 1.5rem;
+  }
 
-    .hero p {
-        font-size: 0.9rem;
-    }
+  .hero p {
+      font-size: 0.9rem;
+  }
 
-    .servicio h3 {
-        font-size: 1.2rem;
-    }
+  .servicio h3 {
+      font-size: 1.2rem;
+  }
 
-    .servicio p {
-        font-size: 0.9rem;
-    }
+  .servicio p {
+      font-size: 0.9rem;
+  }
 
-    .contacto h2 {
-        font-size: 1.5rem;
-    }
+  .contacto h2 {
+      font-size: 1.5rem;
+  }
 
-    .contacto input, .contacto textarea {
-        font-size: 0.9rem;
-    }
+  .contacto input, .contacto textarea {
+      font-size: 0.9rem;
+  }
 
-    .contacto button {
-        font-size: 0.9rem;
-    }
+  .contacto button {
+      font-size: 0.9rem;
+  }
 }
