@@ -12,3 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+window.addEventListener('scroll', function() {
+    const scrollProgress = Math.min(window.scrollY / 300, 1);
+    header.style.animationPlayState = 'running';
+    header.style.animationDuration = '1ms';
+    header.style.animationDelay = `-${scrollProgress}s`;
+});
